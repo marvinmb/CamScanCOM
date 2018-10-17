@@ -200,6 +200,7 @@ namespace Snapshot_Maker
 
                 EnableConnectionControls( true );
             }
+           
         }
 
         // Simulate snapshot trigger
@@ -241,6 +242,24 @@ namespace Snapshot_Maker
         private void snapshotForm_FormClosed( object sender, FormClosedEventArgs e )
         {
             snapshotForm = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            videoDevice.NewFrame += new NewFrameEventHandler(videoDevice_NewFrame );
+        }
+
+        
+        // New  frame is available
+        private void videoDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            Console.WriteLine(eventArgs.Frame.Size);
+
+            
+            pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
+
+            videoDevice.NewFrame -= new NewFrameEventHandler(videoDevice_NewFrame);
         }
     }
 }

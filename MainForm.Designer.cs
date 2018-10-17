@@ -41,7 +41,10 @@
             this.videoSourcePlayer = new AForge.Controls.VideoSourcePlayer();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.triggerButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,11 +160,31 @@
             this.triggerButton.UseVisualStyleBackColor = true;
             this.triggerButton.Click += new System.EventHandler(this.triggerButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(544, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 49);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(647, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(711, 513);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 481);
+            this.ClientSize = new System.Drawing.Size(1383, 562);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.triggerButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.disconnectButton);
@@ -179,6 +202,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,6 +222,8 @@
         private AForge.Controls.VideoSourcePlayer videoSourcePlayer;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button triggerButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
